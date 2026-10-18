@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GAMA 567</title>
+<meta name="description" content="Apna description yahan likho.">
+
+<!-- ================= META PIXEL CODE =================
+     YOUR_PIXEL_ID ki jagah apna Pixel ID daalo (2 jagah: neeche script me aur noscript me) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+  <img class="photo" src="images/krishna.jpg" alt="Krishna">
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+<!-- ================= END META PIXEL CODE ================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Roboto:wght@300&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  /* ===== COLORS: yahan se badlo ===== */
+  :root {
+    --bg: #ffcf6e;          /* base background (overscroll ke liye) */
+    --bg-glow: #fff3cc;     /* logo ke peeche halki chamak */
+    --bg-top: #ffe8ab;      /* gradient upar */
+    --bg-mid: #ffcf6e;      /* gradient beech */
+    --bg-bottom: #f6a27c;   /* gradient niche */
+    --heading: #000000;     /* heading color */
+    --text: #111111;        /* tagline color */
+    --btn-top: #ff7a00;     /* button gradient upar */
+    --btn-bottom: #98092a;  /* button gradient niche */
+    --btn-text: #ffffff;
+    --card-bg: #ffffff;     /* box background */
+    --card-border: #f6d4e0; /* box ka halka border */
+    --card-title: #1f2347;  /* box title color */
+    --card-desc: #6b5a5f;   /* box description color */
+    --icon: #a50c2b;        /* box icon color */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: var(--bg-bottom); }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 50% 160px, var(--bg-glow) 0%, rgba(255,243,204,0) 60%),
+      linear-gradient(170deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bottom) 100%);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 12px 40px;
+  }
+
+  /* 1. TOP IMAGE (gol logo) */
+  .logo {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 7px rgba(255,255,255,.45), 0 16px 34px rgba(120,10,40,.35);
+  }
+
+  /* 2. HEADING */
+  .title {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 1.2;
+    color: var(--heading);
+    margin-top: 8px;
+  }
+
+  /* 3. CONTENT */
+  .tagline {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--text);
+    margin-top: 18px;
+  }
+
+  /* 4. DOWNLOAD BUTTON */
+  .btn {
+    display: block;
+    width: 60%;
+    max-width: 420px;
+    margin: 14px auto 0;
+    padding: 6px 10px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, var(--btn-top), var(--btn-bottom));
+    color: var(--btn-text);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.5;
+    text-decoration: none;
+    box-shadow: 0 10px 22px rgba(152,9,42,.35);
+    /* NEW: button upar-niche hilta rahe */
+    animation: floatUpDown 1.5s ease-in-out infinite;
+  }
+  .btn:focus-visible { outline: 3px solid #000; outline-offset: 3px; }
+
+  /* NEW: upar-niche hilne wali animation */
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+      box-shadow: 0 10px 22px rgba(152,9,42,.35);
+    }
+    50% {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 28px rgba(152,9,42,.25);
+    }
+  }
+
+  /* NEW: hover par button thoda bada ho jaye (animation chalti rahegi) */
+  .btn:hover {
+    scale: 1.05;
+  }
+
+  /* 5. CHAAR BOXES */
+  .cards {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;                  /* CHANGED: pehle 14px */
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;        /* CHANGED: pehle 24px */
+    box-shadow: 0 10px 26px rgba(150,40,40,.16);
+    padding: 10px 18px 10px;    /* CHANGED: pehle 16px 24px 16px */
+    text-align: left;
+    font-family: "Lexend", Arial, sans-serif;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;                  /* CHANGED: pehle 14px */
+    margin-bottom: 6px;         /* CHANGED: pehle 12px */
+  }
+  .card-head .ic {
+    width: 22px;                /* CHANGED: pehle 26px */
+    height: 22px;               /* CHANGED: pehle 26px */
+    flex: none;
+    display: grid;
+    place-items: center;
+    color: var(--icon);
+    fill: var(--icon);
+    font-weight: 700;
+    font-size: 22px;            /* CHANGED: pehle 26px */
+    line-height: 1;
+  }
+  .card-head .ic svg { width: 20px; height: 20px; fill: var(--icon); }  /* CHANGED: pehle 24px */
+  .card h3 {
+    font-weight: 500;
+    font-size: 17px;            /* CHANGED: pehle 21px */
+    line-height: 1.3;
+    color: var(--card-title);
+  }
+  .card p {
+    font-weight: 400;
+    font-size: 12px;            /* CHANGED: pehle 13px */
+    line-height: 1.4;           /* CHANGED: pehle 1.5 */
+    color: var(--card-desc);
+  }
+</style>
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- 1. TOP IMAGE: gol logo (SVG, HD - zoom karne par bhi sharp rehta hai).
+         Text badalne ke liye neeche <text> wali 2 lines me apne app ka naam likho.
+         Ya poora <svg> hata kar apni image lagao: <img class="logo" src="images/logo.jpeg" alt="Logo"> -->
+    <svg class="logo" viewBox="0 0 400 400" role="img" aria-label="App logo" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="logoClip"><circle cx="200" cy="200" r="200"/></clipPath>
+        <radialGradient id="silk" cx="35%" cy="25%" r="85%">
+          <stop offset="0%" stop-color="#a3183f"/>
+          <stop offset="55%" stop-color="#6e0a26"/>
+          <stop offset="100%" stop-color="#32000d"/>
+        </radialGradient>
+        <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff7da0" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#ff7da0" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+        <filter id="txtShadow" x="-10%" y="-10%" width="120%" height="130%">
+          <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".45"/>
+        </filter>
+      </defs>
+      <g clip-path="url(#logoClip)">
+        <rect width="400" height="400" fill="url(#silk)"/>
+        <g filter="url(#soft)" fill="none" stroke-linecap="round">
+          <path d="M-20 90 C 80 20, 150 140, 250 70 S 380 40, 430 90" stroke="url(#fold)" stroke-width="26"/>
+          <path d="M-20 190 C 60 140, 160 250, 260 190 S 380 150, 430 200" stroke="url(#fold)" stroke-width="20" opacity=".7"/>
+          <path d="M-20 310 C 90 250, 170 370, 270 300 S 370 270, 430 320" stroke="url(#fold)" stroke-width="30" opacity=".6"/>
+        </g>
+        <path d="M-20 250 C 80 330, 200 260, 420 380 L420 420 L-20 420Z" fill="#1c0007" opacity=".35" filter="url(#soft)"/>
+      </g>
+      <g fill="#ffffff" font-family="'Playfair Display','Didot','Bodoni MT',Georgia,'Times New Roman',serif" font-weight="700" text-anchor="middle" filter="url(#txtShadow)">
+        <text x="200" y="178" font-size="86" letter-spacing="-2">GAMA</text>
+        <text x="200" y="268" font-size="86" letter-spacing="-2">567</text>
+      </g>
+    </svg>
+
+    <!-- 2. HEADING -->
+    <h1 class="title">GAMA 567</h1>
+
+    <!-- 3. CONTENT -->
+    <p class="tagline">Download the official app for fast results and smooth experience.</p>
+
+    <!-- 4. DOWNLOAD BUTTON
+         href me apna download link daalo. Click par Meta Pixel ka "Subscribe" event fire hota hai. -->
+    <a id="downloadBtn" class="btn" href="https://gama567original.com/app/Gama567.apk">↓DOWNLOAD APP</a>
+
+    <!-- 5. CHAAR BOXES (title aur text badal sakte ho) -->
+    <section class="cards">
+
+      <div class="card">
+        <div class="card-head">
+          <span class="ic">₹</span>
+          <h3>Full Game Rates</h3>
+        </div>
+        <p>Market Ka best game rate avaliable.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-2 8 10-13h-6z"/></svg>
+          </span>
+          <h3>Fastest Results Update</h3>
+        </div>
+        <p>Instant Updates.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/></svg>
+          </span>
+          <h3>Safe and Secure App</h3>
+        </div>
+        <p>Your data stays protected.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 3v12h10V5zm5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          </span>
+          <h3>Simple UI Mobile Friendly</h3>
+        </div>
+        <p>Smooth On All Android Phones.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ===== BUTTON CLICK = META PIXEL "Subscribe" EVENT ===== -->
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function (e) {
+      var url = this.getAttribute('href');
+
+      // Subscribe event fire karo
+      if (typeof fbq === 'function') {
+        fbq('track', 'Subscribe');
+      }
+
+      // Event bhejne ka thoda time dekar link kholo
+      if (url && url !== '#') {
+        e.preventDefault();
+        setTimeout(function () { window.location.href = url; }, 300);
+      } else {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
